@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ffc600;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+}
+
+html {
+    background: url(sounds&Image/people.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.keys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+.key {
+    width: 120px;
+    color: white;
+    font-size: 1.5rem;
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    text-shadow: 2px 4px 8px var(--shadow-color);
+    transition: all 0.1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    will-change: transform;
+}
+
+kbd {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sound {
+    color: var(--main-color);
+    text-shadow: 2px 4px 8px var(--main-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    html {
+        background-size: cover;
+    }
+
+    .keys {
+        flex-direction: row;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .key {
+        width: 80px;
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    kbd {
+        font-size: 2rem;
+    }
+
+    .sound {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .key {
+        width: 70px;
+        padding: 0.6rem;
+    }
+
+    kbd {
+        font-size: 1.8rem;
+    }
+
+    .sound {
+        font-size: 0.9rem;
+    }
+}
